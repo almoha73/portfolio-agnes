@@ -17,10 +17,10 @@ export default function Navbar() {
 				</div>
 				<ul className="w-1/2 hidden menu-list	lg:flex lg:flex-row lg:justify-between  text-xl font-bold">
 					<li className="menu-list-item px-2">
-						<a href="#accueil">Accueil</a>
+						<a href="/">Accueil</a>
 					</li>
 					<li className="menu-list-item  px-2">
-						<a href="#profil">Profil</a>
+						<a href="/profil">Profil</a>
 					</li>
 					<li className="menu-list-item  px-2">
 						<a href="#etudes">CV</a>
@@ -52,16 +52,16 @@ function SideMenu() {
 		<div className="fixed h-56 w-1/2 flex justify-center items-center text-neutral-700 sm:w-1/4 lg:hidden bg-neutral-100 top-36">
 			<ul className="menu-list flex flex-col text-xs font-bold">
 				<li className="menu-list-item py-2 hover:bg-white hover:text-red-500  text-2xl		">
-					<a href="#accueil">Accueil</a>
+					<a href="/">Accueil</a>
 				</li>
 				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	text-2xl	">
-					<a href="#profil">Profil</a>
+					<a href="/profil">Profil</a>
 				</li>
 				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	text-2xl	">
-					<a href="#etudes">Etudes</a>
+					<a href="/cv">Etudes</a>
 				</li>
 				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	text-2xl	">
-					<a href="#portfolio">PortFolio</a>
+					<a href="/portfolio">PortFolio</a>
 				</li>
 			</ul>
 		</div>
