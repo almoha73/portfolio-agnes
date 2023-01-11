@@ -49,18 +49,18 @@ export default function Navbar() {
 
 function SideMenu() {
 	return (
-		<div className="fixed h-56 w-1/2 flex justify-center items-center text-neutral-700 sm:w-1/4 lg:hidden bg-neutral-100 top-36">
-			<ul className="menu-list flex flex-col text-xs font-bold">
-				<li className="menu-list-item py-2 hover:bg-white hover:text-red-500  text-xl		">
+		<div className="z-10 fixed h-56 w-1/2 flex justify-center items-center text-neutral-700 sm:w-1/4 lg:hidden bg-neutral-100 top-28">
+			<ul className="menu-list flex flex-col text-base font-bold">
+				<li className="menu-list-item py-2 hover:bg-white hover:text-red-500 		">
 					<a href="/">Accueil</a>
 				</li>
-				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	text-xl	">
+				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	">
 					<a href="/profil">Profil</a>
 				</li>
-				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	text-xl	">
+				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	">
 					<a href="/cv">CV</a>
 				</li>
-				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	text-xl	">
+				<li className="menu-list-item  py-2 hover:bg-white hover:text-red-500 	">
 					<a href="/portfolio">PortFolio</a>
 				</li>
 			</ul>

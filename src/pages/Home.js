@@ -3,8 +3,11 @@ import Phone from "../components/Phone";
 import { FaReact } from "react-icons/fa";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/all";
+import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(SplitText);
+
 const Home = () => {
 	const text = useRef(null);
 
@@ -49,13 +52,23 @@ const Home = () => {
 				yPercent: 50,
 			});
 	};
-
+	const splitText = () => {
+		const tl = gsap.timeline({ repeat: 1, repeatDelay: 1 });
+		tl.to("p", {
+			duration: 2,
+			text: " Développeur d'applications Javascript React",
+		});
+	};
 	useEffect(() => {
 		onload();
 	}, []);
 
 	useEffect(() => {
 		rotate();
+	}, []);
+
+	useEffect(() => {
+		splitText();
 	}, []);
 
 	return (
@@ -68,9 +81,11 @@ const Home = () => {
 						</div>
 
 						<div ref={text} className="text p-8">
-							<h1 className="textel1 -4xl text-center mb-5">Hello ! I am</h1>
-							<p className="textel2 text-center text-xl">
-								Développeur d'applications Javascript React
+							<h1 id="textel1" className="textel1 -4xl text-center mb-5">
+								Hello ! I am
+							</h1>
+							<p id="textel2" className="textel2 text-center text-xl">
+								{/* Développeur d'applications Javascript React */}
 							</p>
 						</div>
 					</div>
