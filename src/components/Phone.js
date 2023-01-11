@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
 	FaBatteryHalf,
 	FaGoogle,
@@ -8,8 +8,42 @@ import {
 	FaSun,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 
 const Phone = () => {
+	const moveElt = () => {
+		gsap.fromTo(
+			[".box1", ".box2"],
+			{ x: -200 },
+			{
+				rotation: 360,
+				x: 0,
+				duration: 1,
+			}
+		);
+		gsap.fromTo(
+			".box3",
+			{ y: -200 },
+			{
+				y: 0,
+				rotate: 360,
+				duration: 1,
+			}
+		);
+		gsap.fromTo(
+			".box4",
+			{ y: 200 },
+			{
+				y: 0,
+				rotate: 360,
+				duration: 1,
+			}
+		);
+	};
+	useEffect(() => {
+		moveElt();
+	}, []);
+
 	return (
 		<div className="min-w-[300px] h-[500px] border border-slate-800 border-[10px] mb-8 rounded-3xl flex flex-col bg-neutral-200 xl:scale-[1.3]">
 			<div className="w-full h-8 bg-black rounded-t-xl border-black border-4">
@@ -40,7 +74,7 @@ const Phone = () => {
 				</h1>
 				<div className="w-10/12 mx-auto mt-8 grid grid-rows-2 grid-flow-col gap-4 justify-items-center">
 					<div className="">
-						<Link to="/" className="flex flex-col items-center">
+						<Link to="/" className="box1 flex flex-col items-center">
 							<div className="w-12 h-12 bg-neutral-300 rounded-xl grid grid-rows-2 grid-flow-col place-items-center	">
 								<div className="w-4 h-4 border border-white rounded bg-red-500"></div>
 							</div>
@@ -48,7 +82,7 @@ const Phone = () => {
 						</Link>
 					</div>
 					<div className="">
-						<Link to="/profil" className="flex flex-col items-center">
+						<Link to="/profil" className="box2 flex flex-col items-center">
 							<div className="w-12 h-12 bg-neutral-300 rounded-xl grid grid-rows-2 grid-flow-col place-items-center	">
 								<div className="w-4 h-4 border border-white rounded bg-red-500"></div>
 								<div className="w-4 h-4 border border-white rounded bg-yellow-500"></div>
@@ -57,7 +91,7 @@ const Phone = () => {
 						</Link>
 					</div>
 					<div className="">
-						<Link to="/cv" className="flex flex-col items-center">
+						<Link to="/cv" className="box3 flex flex-col items-center">
 							<div className="w-12 h-12 bg-neutral-300 rounded-xl grid grid-rows-2 grid-flow-col place-items-center">
 								<div className="w-4 h-4 border border-white rounded bg-red-500"></div>
 								<div className="w-4 h-4 border border-white rounded bg-yellow-500"></div>
@@ -67,7 +101,7 @@ const Phone = () => {
 						</Link>
 					</div>
 					<div className="">
-						<Link to="/portfolio" className="flex flex-col items-center">
+						<Link to="/portfolio" className="box4 flex flex-col items-center">
 							<div className="w-12 h-12 bg-neutral-300 rounded-xl grid grid-rows-2 grid-flow-col place-items-center">
 								<div className="w-4 h-4 border border-white rounded bg-red-500"></div>
 								<div className="w-4 h-4 border border-white rounded bg-yellow-500"></div>
