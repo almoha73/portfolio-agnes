@@ -36,10 +36,11 @@ const Profil = () => {
 								formation j'ai appris à utiliser Redux Toolkit pour une
 								authentification, manipuler le Context, utiliser les
 								Styled-components, utiliser des librairies (Recharts, antd,
-								react-hook-form ...), créer un npm et l'héberger (modale). De
-								moi-même, j'ai appris Tailwind, l'utilisation de firebase pour 2
-								projets (un de la formation et un projet personnel, l'initiation
-								à Typescript est en cours).
+								react-hook-form, gsap ...), créer un npm et l'héberger (modale).{" "}
+								<br />
+								De moi-même, j'ai appris Tailwind, l'utilisation de firebase
+								pour 2 projets (un de la formation et un projet personnel,
+								l'initiation à Typescript est en cours).
 							</p>
 						</div>
 

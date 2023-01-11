@@ -2,10 +2,9 @@ import React, { useEffect, useRef } from "react";
 import Phone from "../components/Phone";
 import { FaReact } from "react-icons/fa";
 import { gsap } from "gsap";
-//import { ScrollTrigger } from "gsap/ScrollTrigger";
-//import ScrollToPlugin from "gsap/ScrollToPlugin";
+import { TextPlugin } from "gsap/all";
 
-gsap.registerPlugin();
+gsap.registerPlugin(TextPlugin);
 const Home = () => {
 	const text = useRef(null);
 
@@ -27,6 +26,8 @@ const Home = () => {
 			)
 
 			.to(".textel1", {
+				text: "Agnès Beaumatin",
+				ease: "none",
 				scale: 2.5,
 				yPercent: -580,
 				delay: 0.3,
@@ -67,7 +68,7 @@ const Home = () => {
 						</div>
 
 						<div ref={text} className="text p-8">
-							<h1 className="textel1 -4xl text-center mb-5">Agnès Beaumatin</h1>
+							<h1 className="textel1 -4xl text-center mb-5">Hello ! I am</h1>
 							<p className="textel2 text-center text-xl">
 								Développeur d'applications Javascript React
 							</p>
