@@ -11,7 +11,7 @@ const Profil = () => {
 	const animeText = () => {
 		var tl = gsap.timeline(),
 			mySplitText = new SplitText(".text", { type: "lines,words" }),
-			words = mySplitText.words; //an array of all the divs that wrap each character.
+			words = mySplitText.words; //an array of all the divs that wrap each character
 
 		gsap.set(".text", { perspective: 400 });
 		tl.fromTo(
