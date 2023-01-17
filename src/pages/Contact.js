@@ -25,7 +25,7 @@ export default function Contact() {
 	return (
 		<>
 			{isOpen && <Modal />}
-			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-screen">
+			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-auto">
 				<Navbar />
 
 				<main className="overflow-hidden">
@@ -176,6 +176,8 @@ export default function Contact() {
 											<a
 												className="text-blue-200 hover:text-blue-100"
 												href="https://www.facebook.com/agnes.bmt"
+												target="_blank"
+												rel="noreferrer"
 											>
 												<span className="sr-only">Facebook</span>
 												<FaFacebook className="text-2xl" />
@@ -185,6 +187,8 @@ export default function Contact() {
 											<a
 												className="text-blue-200 hover:text-blue-100"
 												href="https://github.com/almoha73"
+												target="_blank"
+												rel="noreferrer"
 											>
 												<span className="sr-only">GitHub</span>
 												<FaGithub className="text-2xl" />
@@ -195,7 +199,7 @@ export default function Contact() {
 
 								{/* Contact form */}
 								<div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-									<h3 className="text-lg font-medium text-white">
+									<h3 className="sm:text-lg font-medium text-white">
 										Ou envoyez moi un message !
 									</h3>
 									<form

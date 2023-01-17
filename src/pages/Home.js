@@ -73,7 +73,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col justify-center items-center w-full h-auto sm:h-screen">
+			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col justify-center items-center w-full h-screen sm:h-screen">
 				<main className="title w-10/12 xl:w-8/12 h-4/12 text-neutral-100 mt-14 rounded-lg flex flex-col sm:flex-row lg:justify-between  items-center">
 					<div className="flex flex-col  justify-center items-center">
 						<div className=" w-20 flex items-center justify-center">
@@ -88,7 +88,9 @@ const Home = () => {
 								{/* Développeur d'applications Javascript React */}
 							</p>
 						</div>
-						<a href="../assets/cv.pdf">Télécharger le CV</a>
+						<a href="../assets/cv.pdf" className="mb-8 block">
+							Télécharger le CV
+						</a>
 					</div>
 
 					<Phone />
