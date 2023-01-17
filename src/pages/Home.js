@@ -4,6 +4,7 @@ import { FaReact } from "react-icons/fa";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/all";
 import { SplitText } from "gsap/SplitText";
+import cv from "../assets/CV.pdf";
 
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(SplitText);
@@ -88,8 +89,13 @@ const Home = () => {
 								{/* Développeur d'applications Javascript React */}
 							</p>
 						</div>
-						<a href="../assets/cv.pdf" className="mb-8 block">
-							Télécharger le CV
+						<a
+							href={cv}
+							className="mb-8 block"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Téléchargez le CV
 						</a>
 					</div>
 
