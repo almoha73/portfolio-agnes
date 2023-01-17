@@ -91,7 +91,10 @@ const Phone = () => {
 						</Link>
 					</div>
 					<div className="">
-						<Link to="/cv" className="box3 flex flex-col items-center">
+						<Link
+							to="/curiculum-vitae"
+							className="box3 flex flex-col items-center"
+						>
 							<div className="w-12 h-12 bg-neutral-300 rounded-xl grid grid-rows-2 grid-flow-col place-items-center">
 								<div className="w-4 h-4 border border-white rounded bg-red-500"></div>
 								<div className="w-4 h-4 border border-white rounded bg-yellow-500"></div>
@@ -109,6 +112,17 @@ const Phone = () => {
 								<div className="w-4 h-4 border border-white rounded bg-blue-500"></div>
 							</div>
 							<span className="text-black">Portfolio</span>
+						</Link>
+					</div>
+					<div className="">
+						<Link to="/contact" className="box4 flex flex-col items-center">
+							<div className="w-12 h-12 bg-neutral-300 rounded-xl grid grid-rows-2 grid-flow-col place-items-center">
+								<div className="w-4 h-4 border border-white rounded bg-red-500"></div>
+								<div className="w-4 h-4 border border-white rounded bg-yellow-500"></div>
+								<div className="w-4 h-4 border border-white rounded bg-green-500"></div>
+								<div className="w-4 h-4 border border-white rounded bg-blue-500"></div>
+							</div>
+							<span className="text-black">Contact</span>
 						</Link>
 					</div>
 				</div>

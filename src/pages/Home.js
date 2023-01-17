@@ -82,12 +82,13 @@ const Home = () => {
 
 						<div ref={text} className="text p-8">
 							<h1 id="textel1" className="textel1 -4xl text-center mb-5">
-								Hello ! I am
+								Bonjour, je suis !
 							</h1>
 							<p id="textel2" className="textel2 text-center text-xl">
 								{/* Développeur d'applications Javascript React */}
 							</p>
 						</div>
+						<a href="../assets/cv.pdf">Télécharger le CV</a>
 					</div>
 
 					<Phone />
