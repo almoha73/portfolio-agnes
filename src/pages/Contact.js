@@ -171,7 +171,7 @@ export default function Contact() {
 											<span className="ml-3">almoha@gmail.com</span>
 										</dd>
 									</dl>
-									<ul role="list" className="mt-8 flex space-x-12">
+									<ul className="mt-8 flex space-x-12">
 										<li>
 											<a
 												className="text-blue-200 hover:text-blue-100"
@@ -260,19 +260,13 @@ export default function Contact() {
 											</div>
 										</div>
 										<div>
-											<div className="flex justify-between">
+											<div className="">
 												<label
 													htmlFor="phone"
 													className="block text-sm font-medium text-white"
 												>
 													Téléphone
 												</label>
-												<span
-													id="phone-optional"
-													className="text-sm text-white"
-												>
-													Optionel
-												</span>
 											</div>
 											<div className="mt-1">
 												<input

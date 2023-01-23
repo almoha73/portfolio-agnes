@@ -3,9 +3,16 @@
 @tailwind components;
 
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 
-*, ::after, ::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#textel1 {
+	font-family: "Shadows Into Light", cursive;
 }

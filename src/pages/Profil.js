@@ -49,7 +49,7 @@ const Profil = () => {
 		<>
 			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-auto sm:h-screen">
 				<Navbar />
-				<main className="mt-14 w-full h-2/12 flex justify-center rounded-lg">
+				<main className="mt-14 w-full h-2/12 flex justify-center rounded-lg mb-32">
 					<div className="box flex justify-evenly items-center lg:flex-row  flex-col-reverse sm-w-9/12 w-10/12 bg-neutral-100 rounded-lg p-3 sm:p-5">
 						<div className="w-11/12 sm:w-9/12 sm:gap-10 flex sm:flex-col flex-col justify-center items-center">
 							<div className="mt-5 md:w-4/5 flex gap-2 justify-between">
@@ -69,19 +69,18 @@ const Profil = () => {
 								Sass, mais aussi en tailwind et bootstrap que j'ai appris en
 								plus de ma formation, tailwind étant mon préféré des framework
 								css que j'utilise. <br />
-								Mon objectif à court terme est de m'améliorer et d'acquérir un
-								niveau élevé dans le framework React, commencer à utiliser
-								Typecript dans mes projets. <br />
-								Je souhaite aussi m'initier rapidement à d'autres frameworks
-								front et apprendre le back. En ce qui concerne React, lors de ma
-								formation j'ai appris à utiliser Redux Toolkit pour une
-								authentification, manipuler le Context, utiliser les
-								Styled-components, utiliser des librairies (Recharts, antd,
-								react-hook-form, gsap ...), créer un npm et l'héberger (modale).{" "}
+								Mon objectif à court et moyen terme est de m'améliorer et
+								d'acquérir un niveau élevé dans le framework React, commencer à
+								utiliser Typecript dans mes projets en me formant à Angular,
+								m'initier au Backend.
 								<br />
+								En ce qui concerne React, lors de ma formation j'ai appris à
+								utiliser Redux Toolkit pour une authentification, manipuler le
+								Context, utiliser les Styled-components, utiliser des librairies
+								(Recharts, antd, react-hook-form, gsap ...), créer un npm et
+								l'héberger (modale). <br />
 								De moi-même, j'ai appris Tailwind, l'utilisation de firebase
-								pour 2 projets (un de la formation et un projet personnel,
-								l'initiation à Typescript est en cours).
+								pour plusieurs projets.
 							</p>
 						</div>
 

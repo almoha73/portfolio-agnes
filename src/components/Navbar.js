@@ -20,7 +20,7 @@ export default function Navbar() {
 	];
 
 	return (
-		<header className="w-11/12">
+		<header className="w-11/12 mx-auto">
 			<div className="rounded-md mt-5 bg-neutral-700 px-2.5   w-full h-20 text-gray-300 flex flex-row justify-between items-center ">
 				<div className="brand-logo text-l  sm:text-2xl px-2 w-1/2">
 					Agnès Beaumatin
@@ -32,7 +32,7 @@ export default function Navbar() {
 							to={item.href}
 							className={({ isActive }) =>
 								isActive
-									? "nav-active underline hover:decoration-4 decoration-white"
+									? "nav-active underline hover:decoration-4 decoration-blue-500 hover:text-blue-500 text-blue-500"
 									: "menu-list-item  px-2"
 							}
 							end
@@ -40,16 +40,6 @@ export default function Navbar() {
 							<li>{item.name}</li>
 						</NavLink>
 					))}
-
-					{/* <li className="menu-list-item  px-2">
-						<a href="/profil">Profil</a>
-					</li>
-					<li className="menu-list-item  px-2">
-						<a href="/curiculum-vitae">CV</a>
-					</li>
-					<li className="menu-list-item  px-2">
-						<a href="#portfolio">Portfolio</a>
-					</li> */}
 				</ul>
 				<button
 					onClick={() => {
