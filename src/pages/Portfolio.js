@@ -24,6 +24,15 @@ const Portfolio = () => {
 		<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-auto">
 			<Navbar />
 			<main className="w-full h-auto mt-16 sm:mt-24 mb-16 ">
+				<p className="text-white w-11/12 mx-auto mb-4">
+					Lien du code sur github de ce portfolio:{" "}
+					<a
+						href="https://github.com/almoha73/portfolio-agnes"
+						className="text-xl text-blue-500"
+					>
+						Cliquez ici
+					</a>
+				</p>
 				<div className=" flex flex-col gap-5 items-center justify-center">
 					{screenshots &&
 						screenshots.map((elt) => (
