@@ -29,6 +29,7 @@ const Portfolio = () => {
 						screenshots.map((elt) => (
 							<Card
 								href={elt.screenshots.href}
+								npm={elt.screenshots.npm}
 								text={elt.screenshots.text}
 								code={elt.screenshots.code}
 								page={elt.screenshots.page}
