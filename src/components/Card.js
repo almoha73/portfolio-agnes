@@ -15,7 +15,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 				)}
 
 				<div className="py-2 text-white xl:px-6">
-					<p className="text-xl">{text}</p>
+					<p className="text-xl text-justify">{text}</p>
 					<br />
 					{href ? (
 						<p className="text-xl">

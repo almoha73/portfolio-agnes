@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
-import { FaFacebook, FaGithub } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Modal from "../components/Modal";
 import { collection, addDoc } from "firebase/firestore";
@@ -192,6 +192,17 @@ export default function Contact() {
 											>
 												<span className="sr-only">GitHub</span>
 												<FaGithub className="text-2xl" />
+											</a>
+										</li>
+										<li>
+											<a
+												className="text-blue-200 hover:text-blue-100"
+												href="https://www.linkedin.com/in/agnes-beaumatin-521b341b8/"
+												target="_blank"
+												rel="noreferrer"
+											>
+												<span className="sr-only">Linkedin</span>
+												<FaLinkedin className="text-2xl" />
 											</a>
 										</li>
 									</ul>
