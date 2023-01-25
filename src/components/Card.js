@@ -14,10 +14,11 @@ const Card = ({ href, text, page, code, name, npm }) => {
 					</div>
 				)}
 
-				<div className="py-2 text-white xl:px-4">
-					<p className="">{text}</p>
+				<div className="py-2 text-white xl:px-6">
+					<p className="text-xl">{text}</p>
+					<br />
 					{href ? (
-						<p>
+						<p className="text-xl">
 							Lien github pages:
 							<a
 								href={page}
@@ -30,7 +31,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 							</a>
 						</p>
 					) : (
-						<p>
+						<p className="text-xl">
 							Lien du package sur npm:
 							<a
 								href={npm}
@@ -44,7 +45,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 						</p>
 					)}
 
-					<p>
+					<p className="text-xl">
 						Lien vers le code sur github:{" "}
 						<a
 							href={code}
