@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import moi from "../assets/IMG_20220816_072523_171.jpg";
+
 import { FaHtml5, FaCss3Alt, FaSass, FaNpm, FaGithub } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiBootstrap } from "react-icons/si";
 import Navbar from "../components/Navbar";
@@ -86,7 +86,7 @@ const Profil = () => {
 
 						<img
 							className="block w-2/4 sm:w-1/4 rounded-lg	"
-							src={moi}
+							src="https://firebasestorage.googleapis.com/v0/b/portfolio-e5e20.appspot.com/o/photo-profil%2FIMG_20230125_172737_845.jpg?alt=media&token=b3b21529-67a9-4ae7-8b18-6639d700871c"
 							alt="Moi"
 						/>
 					</div>
