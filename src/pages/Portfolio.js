@@ -33,6 +33,15 @@ const Portfolio = () => {
 						Cliquez ici
 					</a>
 				</p>
+				<p className="text-white w-11/12 mx-auto mb-4">
+					Lien vers mon github:{" "}
+					<a
+						href="https://github.com/almoha73"
+						className="text-xl text-blue-500"
+					>
+						Cliquez ici
+					</a>
+				</p>
 				<div className=" flex flex-col gap-5 items-center justify-center">
 					{screenshots &&
 						screenshots.map((elt) => (
