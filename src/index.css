@@ -11,8 +11,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	
 }
-
+body{
+	background-image: url('./assets/masaaki-komori-1hUsp3zi0rA-unsplash.jpg');
+	background-size: cover;
+}
 #textel1 {
 	font-family: "Shadows Into Light", cursive;
 }

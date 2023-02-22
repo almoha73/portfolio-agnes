@@ -47,7 +47,7 @@ const Profil = () => {
 	}, []);
 	return (
 		<>
-			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-auto sm:h-screen">
+			<div className=" flex flex-col items-center w-full h-auto sm:h-screen">
 				<Navbar />
 				<main className="mt-14 w-full h-2/12 flex justify-center rounded-lg mb-32">
 					<div className="box flex justify-evenly items-center lg:flex-row  flex-col-reverse sm-w-9/12 w-10/12 bg-neutral-100 rounded-lg p-3 sm:p-5">
@@ -86,7 +86,7 @@ const Profil = () => {
 
 						<img
 							className="block w-2/4 sm:w-1/4 rounded-lg	"
-							src="https://firebasestorage.googleapis.com/v0/b/portfolio-e5e20.appspot.com/o/photo-profil%2FIMG_20230125_172737_845.jpg?alt=media&token=b3b21529-67a9-4ae7-8b18-6639d700871c"
+							src="https://firebasestorage.googleapis.com/v0/b/portfolio-e5e20.appspot.com/o/photo-profil%2Fagnes_CV.png?alt=media&token=1adb645c-47af-4c46-8ed4-c3665bd4fdef"
 							alt="Moi"
 						/>
 					</div>

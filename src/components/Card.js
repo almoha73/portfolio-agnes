@@ -3,9 +3,9 @@ import React from "react";
 const Card = ({ href, text, page, code, name, npm }) => {
 	return (
 		<>
-			<div className="flex flex-col xl:flex-row border p-4 w-11/12  h-auto rounded ">
+			<div className="flex flex-col xl:flex-row border p-4 w-11/12 text-black h-auto rounded shadow-lg">
 				{href && (
-					<div>
+					<div className="flex justify-center">
 						<img
 							src={href}
 							alt="project screenshot"
@@ -14,7 +14,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 					</div>
 				)}
 
-				<div className="py-2 text-white xl:px-6">
+				<div className="py-2  xl:px-6">
 					<p className="text-xl text-justify">{text}</p>
 					<br />
 					{href ? (
@@ -22,7 +22,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 							Lien github pages:
 							<a
 								href={page}
-								className="text-blue-500"
+								className="text-blue-500 hover:text-[#802836]"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -35,7 +35,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 							Lien du package sur npm:
 							<a
 								href={npm}
-								className="text-blue-500"
+								className="text-blue-500 hover:text-[#802836]"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -49,7 +49,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
 						Lien vers le code sur github:{" "}
 						<a
 							href={code}
-							className="text-blue-500"
+							className="text-blue-500 hover:text-[#802836]"
 							target="_blank"
 							rel="noreferrer"
 						>

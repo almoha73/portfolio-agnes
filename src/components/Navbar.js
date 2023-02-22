@@ -21,7 +21,7 @@ export default function Navbar() {
 
 	return (
 		<header className="w-11/12 mx-auto">
-			<div className="rounded-md mt-5 bg-neutral-700 px-2.5   w-full h-20 text-gray-300 flex flex-row justify-between items-center ">
+			<div className="rounded-md mt-5 bg-[#802836] px-2.5   w-full h-20 text-[#F7F7F9] flex flex-row justify-between items-center ">
 				<div className="brand-logo text-l  sm:text-2xl px-2 w-1/2">
 					Agnès Beaumatin
 				</div>
@@ -32,8 +32,8 @@ export default function Navbar() {
 							to={item.href}
 							className={({ isActive }) =>
 								isActive
-									? "nav-active underline hover:decoration-4 decoration-blue-500 hover:text-blue-500 text-blue-500"
-									: "menu-list-item  px-2"
+									? "nav-active underline hover:decoration-4 decoration-[#F7F7F9]"
+									: "menu-list-item  px-2 "
 							}
 							end
 						>

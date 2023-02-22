@@ -25,7 +25,7 @@ export default function Contact() {
 	return (
 		<>
 			{isOpen && <Modal />}
-			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-auto lg:h-screen">
+			<div className=" flex flex-col items-center w-full h-auto lg:h-screen">
 				<Navbar />
 
 				<main className="overflow-hidden">

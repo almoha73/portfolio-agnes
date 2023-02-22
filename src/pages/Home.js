@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { TextPlugin } from "gsap/all";
 import { SplitText } from "gsap/SplitText";
 
+
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(SplitText);
 
@@ -49,20 +50,20 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col justify-center items-center w-full h-auto sm:h-screen">
-				<main className="title w-10/12 mx-auto xl:w-8/12  text-neutral-100  rounded-lg flex flex-col sm:flex-row lg:justify-between  items-center">
-					<div className="flex flex-col  justify-center items-center w-1/2">
+			<div className=" flex flex-col justify-center items-center w-full h-auto sm:h-screen">
+				<main className="title w-10/12 py-8 sm:w-11/12 lg:gap-8 flex flex-col xl:flex-row items-center">
+					<div className="flex flex-col  justify-center  items-center w-full sm:w-2/3  text-[#8C1636]">
 						<div
 							ref={text}
-							className="text p-8 flex flex-col justify-center items-center"
+							className="text  sm:p-0 flex flex-col justify-center items-center  "
 						>
-							<h1 id="textel1" className="textel1 text-6xl text-center mb-5">
+							<h1 id="textel1" className="textel1 text-6xl lg:text-8xl text-center mb-5 font-bold">
 								Agnès Beaumatin
 							</h1>
 							<div className=" w-20 flex items-center justify-center mb-5">
 								<FaReact className="faReact w-20 h-20 fill-red-500 stroke-1" />
 							</div>
-							<p id="textel2" className="textel2 text-center text-xl">
+							<p id="textel2" className="textel2 text-center text-xl lg:text-3xl">
 								Développeur d'applications Javascript React
 							</p>
 						</div>

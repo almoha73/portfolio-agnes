@@ -12,7 +12,9 @@ const Portfolio = () => {
 			const d = await getScreenshots();
 			await d.forEach((query) =>
 				array.push({ key: query.id, screenshots: query.data() })
+				
 			);
+			array.sort((a,b)=> a.screenshots.order - b.screenshots.order)
 			setScreenshots(array);
 		};
 		loadData();
@@ -21,10 +23,10 @@ const Portfolio = () => {
 	console.log(screenshots);
 
 	return (
-		<div className="bg-gradient-to-r from-stone-500 to-neutral-800 flex flex-col items-center w-full h-auto">
+		<div className=" flex flex-col items-center w-full h-auto bg-[#F1EBED]  ">
 			<Navbar />
-			<main className="w-full h-auto mt-16 sm:mt-24 mb-16 ">
-				<p className="text-white w-11/12 mx-auto mb-4">
+			<main className="w-full h-auto mt-16 sm:mt-24 mb-16 text-black">
+				<p className="w-11/12 mx-auto mb-4">
 					Lien du code sur github de ce portfolio:{" "}
 					<a
 						href="https://github.com/almoha73/portfolio-agnes"
@@ -33,7 +35,7 @@ const Portfolio = () => {
 						Cliquez ici
 					</a>
 				</p>
-				<p className="text-white w-11/12 mx-auto mb-4">
+				<p className=" w-11/12 mx-auto mb-4">
 					Lien vers mon github:{" "}
 					<a
 						href="https://github.com/almoha73"
