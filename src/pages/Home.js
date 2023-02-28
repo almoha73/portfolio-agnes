@@ -50,14 +50,14 @@ const Home = () => {
 
 	return (
 		<>
-			<div className=" flex flex-col justify-center items-center w-full h-auto sm:h-screen">
-				<main className="title w-10/12 py-8 sm:w-11/12 lg:gap-8 flex flex-col xl:flex-row items-center">
+			<div className="flex flex-col justify-center items-center w-full xl:min-h-[1024px] lg:min-h-[768px]">
+				<main className="title w-10/12 py-8  sm:w-11/12 lg:mt-16 lg:gap-8 flex flex-col xl:flex-row items-center">
 					<div className="flex flex-col  justify-center  items-center w-full sm:w-2/3  text-[#8C1636]">
 						<div
 							ref={text}
 							className="text  sm:p-0 flex flex-col justify-center items-center  "
 						>
-							<h1 id="textel1" className="textel1 text-6xl lg:text-8xl text-center mb-5 font-bold">
+							<h1 id="textel1" className="textel1 text-6xl lg:text-7xl xl:text-8xl text-center mb-5 font-bold">
 								Agnès Beaumatin
 							</h1>
 							<div className=" w-20 flex items-center justify-center mb-5">

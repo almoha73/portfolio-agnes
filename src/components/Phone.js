@@ -45,7 +45,7 @@ const Phone = () => {
   }, []);
 
   return (
-    <div className="min-w-[300px] h-[500px] border border-slate-800 border-[10px]  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] xl:scale-[1.3]">
+    <div className="min-w-[300px] h-[500px] border border-slate-800 border-[10px]  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]">
       <div className="w-full h-8 bg-black rounded-t-xl border-black border-4">
         <div className="flex w-10/12 justify-between items-center m-auto text-white">
           <span>11:11</span>

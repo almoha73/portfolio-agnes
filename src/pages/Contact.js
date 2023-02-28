@@ -40,7 +40,7 @@ export default function Contact() {
 
 							<div className="grid grid-cols-1 lg:grid-cols-3 mt-8">
 								{/* Contact information */}
-								<div className="relative overflow-hidden bg-gradient-to-b from-neutral-500 to-neutral-600 py-10 px-6 sm:px-10 xl:p-12">
+								<div className="relative overflow-hidden bg-gradient-to-b from-[#C64B88] to-neutral-600 py-10 px-6 sm:px-10 xl:p-12">
 									{/* Decorative angle backgrounds */}
 									<div
 										className="pointer-events-none absolute inset-0 sm:hidden"
@@ -145,9 +145,7 @@ export default function Contact() {
 										Contactez-moi
 									</h3>
 									<p className="mt-6 max-w-3xl text-base text-blue-50">
-										Si vous souhaitez me contacter par téléphone, n'hésitez pas
-										à me laisser un sms car je fais les 3/8 en attendant de
-										trouver un poste de développeur.
+										
 									</p>
 									<dl className="mt-8 space-y-6">
 										<dt>
@@ -209,8 +207,8 @@ export default function Contact() {
 								</div>
 
 								{/* Contact form */}
-								<div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-									<h3 className="sm:text-lg font-medium text-white">
+								<div className="py-10 sm:px-10 lg:col-span-2 xl:p-12">
+									<h3 className="sm:text-lg font-medium">
 										Ou envoyez moi un message !
 									</h3>
 									<form
@@ -220,7 +218,7 @@ export default function Contact() {
 										<div>
 											<label
 												htmlFor="first-name"
-												className="block text-sm font-medium text-white"
+												className="block text-sm font-medium"
 											>
 												Prénom
 											</label>
@@ -230,14 +228,14 @@ export default function Contact() {
 													type="text"
 													name="firstname"
 													id="firstname"
-													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500"
+													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-secondary focus:ring-secondary"
 												/>
 											</div>
 										</div>
 										<div>
 											<label
 												htmlFor="last-name"
-												className="block text-sm font-medium text-white"
+												className="block text-sm font-medium"
 											>
 												Nom
 											</label>
@@ -248,14 +246,14 @@ export default function Contact() {
 													name="lastname"
 													id="lastname"
 													autoComplete="family-name"
-													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500"
+													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-secondary focus:ring-secondary"
 												/>
 											</div>
 										</div>
 										<div>
 											<label
 												htmlFor="email"
-												className="block text-sm font-medium text-white"
+												className="block text-sm font-medium"
 											>
 												Email
 											</label>
@@ -266,7 +264,7 @@ export default function Contact() {
 													name="email"
 													type="email"
 													autoComplete="email"
-													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500"
+													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-secondary focus:ring-secondary"
 												/>
 											</div>
 										</div>
@@ -274,7 +272,7 @@ export default function Contact() {
 											<div className="">
 												<label
 													htmlFor="phone"
-													className="block text-sm font-medium text-white"
+													className="block text-sm font-medium"
 												>
 													Téléphone
 												</label>
@@ -286,7 +284,7 @@ export default function Contact() {
 													name="phone"
 													id="phone"
 													autoComplete="tel"
-													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500"
+													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-secondary focus:ring-secondary"
 													aria-describedby="phone-optional"
 												/>
 											</div>
@@ -294,7 +292,7 @@ export default function Contact() {
 										<div className="sm:col-span-2">
 											<label
 												htmlFor="subject"
-												className="block text-sm font-medium text-white"
+												className="block text-sm font-medium"
 											>
 												Objet
 											</label>
@@ -304,7 +302,7 @@ export default function Contact() {
 													type="text"
 													name="subject"
 													id="subject"
-													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500"
+													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-secondary focus:ring-secondary"
 												/>
 											</div>
 										</div>
@@ -312,7 +310,7 @@ export default function Contact() {
 											<div className="flex">
 												<label
 													htmlFor="message"
-													className="block text-sm font-medium text-white"
+													className="block text-sm font-medium"
 												>
 													Message
 												</label>
@@ -323,7 +321,7 @@ export default function Contact() {
 													id="message"
 													name="message"
 													rows={4}
-													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500"
+													className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-black shadow-sm focus:border-secondary focus:ring-secondary"
 													aria-describedby="message-max"
 													defaultValue={""}
 												/>
@@ -332,7 +330,7 @@ export default function Contact() {
 										<div className="sm:col-span-2 sm:flex sm:justify-end">
 											<button
 												type="submit"
-												className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto"
+												className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-secondary px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary hover:text-secondary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto"
 											>
 												Envoyer
 											</button>
