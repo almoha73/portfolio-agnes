@@ -25,7 +25,7 @@ export default function Navbar() {
 				<div className="brand-logo text-l  sm:text-2xl px-2 w-1/2">
 					Agnès Beaumatin
 				</div>
-				<ul className="w-1/2 hidden menu-list	lg:flex lg:flex-row lg:justify-between  text-xl ">
+				<ul className="w-1/2 hidden menu-list mr-4	lg:flex lg:flex-row lg:justify-between  text-xl ">
 					{navigation.map((item) => (
 						<NavLink
 							key={item.key}
