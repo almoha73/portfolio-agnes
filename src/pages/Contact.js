@@ -25,7 +25,7 @@ export default function Contact() {
 	return (
 		<>
 			{isOpen && <Modal />}
-			<div className=" flex flex-col items-center w-full h-auto lg:h-screen">
+			<div className=" flex flex-col items-center w-full h-auto w-full xl:min-h-[1024px] lg:min-h-[768px]">
 				<Navbar />
 
 				<main className="overflow-hidden">
@@ -40,7 +40,7 @@ export default function Contact() {
 
 							<div className="grid grid-cols-1 lg:grid-cols-3 mt-8">
 								{/* Contact information */}
-								<div className="relative overflow-hidden bg-gradient-to-b from-[#C64B88] to-neutral-600 py-10 px-6 sm:px-10 xl:p-12">
+								<div className="lg:max-h-[600px] relative overflow-hidden bg-gradient-to-b from-[#802836] to-[#e6d7da] py-10 px-6 sm:px-10 xl:p-12">
 									{/* Decorative angle backgrounds */}
 									<div
 										className="pointer-events-none absolute inset-0 sm:hidden"
