@@ -67,7 +67,7 @@ const Profil = () => {
 								spécialisée dans le Frontend avec le framework React.
 								<br /> <br /> Pour ce qui est du style, je code beaucoup en
 								Sass, mais aussi en tailwind et bootstrap que j'ai appris en
-								plus de ma formation, tailwind étant mon préféré des framework
+								plus de ma formation, tailwind étant mon préféré des frameworks
 								css que j'utilise. <br />
 								Mon objectif à court et moyen terme est de m'améliorer et
 								d'acquérir un niveau élevé dans le framework React, commencer à
@@ -86,7 +86,7 @@ const Profil = () => {
 
 						<img
 							className="block w-2/4 sm:w-1/4 rounded-lg	"
-							src="https://firebasestorage.googleapis.com/v0/b/portfolio-e5e20.appspot.com/o/photo-profil%2Fagnes_CV.png?alt=media&token=1adb645c-47af-4c46-8ed4-c3665bd4fdef"
+							src="https://firebasestorage.googleapis.com/v0/b/perso-6e317.appspot.com/o/Photos%2Fmoi%2Fagnes_CV.png?alt=media&token=b74fc244-5ed8-4934-b07b-0d27ed6f2254"
 							alt="Moi"
 						/>
 					</div>
