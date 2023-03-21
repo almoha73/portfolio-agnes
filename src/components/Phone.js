@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   FaBatteryHalf,
   FaGoogle,
@@ -9,8 +9,10 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Phone = () => {
+  const phoneRef = useRef(null);
   const moveElt = () => {
     gsap.fromTo(
       [".box1", ".box2"],
@@ -44,8 +46,35 @@ const Phone = () => {
     moveElt();
   }, []);
 
+  useEffect(() => {
+    const phone = phoneRef.current;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: phone,
+        start: "top 80%",
+      },
+    });
+    
+    tl.fromTo(
+      phone,
+      {
+        x: 0,
+        y: 5,
+        rotate: "0deg",
+      },
+      {
+        x: 5,
+        y: -5,
+        rotate: "2deg",
+        duration: 0.05,
+        yoyo: true,
+        repeat: 9,
+      }
+    );
+    
+  }, []);
   return (
-    <div className="min-w-[300px] h-[500px] border border-slate-800 border-[10px]  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]">
+    <div ref={phoneRef} className=" min-w-[300px] h-[500px] border border-slate-800 border-[10px]  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]">
       <div className="w-full h-8 bg-black rounded-t-xl border-black border-4">
         <div className="flex w-10/12 justify-between items-center m-auto text-white">
           <span>11:11</span>
