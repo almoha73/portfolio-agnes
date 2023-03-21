@@ -7,7 +7,7 @@ const Curiculum = () => {
 			<Navbar />
 			<div className="flex flex-col  xl:p-24 items-center justify-center w-full  xl:w-2/3 h-screen gap-8 text-[#802836]">
 				<a
-					href="https://firebasestorage.googleapis.com/v0/b/perso-6e317.appspot.com/o/CV_Beaumatin_Agnes-Dev-Front.pdf?alt=media&token=6e69f5fc-898d-4349-80fe-9482222f5638"
+					href="https://firebasestorage.googleapis.com/v0/b/portfolio-e5e20.appspot.com/o/CV%2FCV_contrat-pro.pdf?alt=media&token=b1e4d21d-e692-4fcb-8ade-28d4b984d716"
 					className="text-4xl   hover:text-white hover:bg-[#802836] border shadow-lg px-4 py-2 rounded-lg"
 					target="_blank"
 					rel="noreferrer"
