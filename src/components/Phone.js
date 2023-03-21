@@ -64,7 +64,7 @@ const Phone = () => {
       },
       {
         x: 5,
-        y: -5,
+        y: 0,
         rotate: "2deg",
         duration: 0.05,
         yoyo: true,
