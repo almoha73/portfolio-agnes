@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import { getScreenshots } from "../utils/fetchScreenshots";
 import Card from "../components/Card";
 import { uuidv4 } from "@firebase/util";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import  { FaLongArrowAltUp } from "react-icons/fa";
 
 const Portfolio = () => {
