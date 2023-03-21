@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect} from "react";
 import Phone from "../components/Phone";
 import { FaReact } from "react-icons/fa";
 import { gsap } from "gsap";
