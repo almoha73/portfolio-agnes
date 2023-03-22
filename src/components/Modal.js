@@ -38,11 +38,7 @@ const Modal = () => {
 								>
 									Message envoyé !
 								</h3>
-								<div className="mt-2">
-									{/* <p className="text-sm text-gray-500">
-										If you want, you can create more !
-									</p> */}
-								</div>
+								
 							</div>
 						</div>
 						<div className="mt-5 sm:mt-6">

@@ -48,12 +48,7 @@ const Phone = () => {
 
   useEffect(() => {
     const phone = phoneRef.current;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: phone,
-        start: "top 80%",
-      },
-    });
+    const tl = gsap.timeline();
     
     tl.fromTo(
       phone,
