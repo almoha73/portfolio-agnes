@@ -1,32 +1,23 @@
-import React, {useState, useRef, useEffect} from "react";
+import React from "react";
+import { useInView } from "react-intersection-observer";
 
 const Card = ({ href, text, page, code, name, npm }) => {
-  const [show, setShow] = useState(false);
-  const ref = useRef(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setShow(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-    observer.observe(ref.current);
-  }, []);
+  const { ref, inView } = useInView({
+    rootMargin: "0px 0px -100px 0px",
+  });
+
   return (
     <>
       <div
-        className={`flex flex-col xl:flex-row border p-4 w-11/12 text-black h-auto rounded shadow-lg ${
-          show ? "animate-fade-in" : ""
-        }`}
         ref={ref}
+        className={`flex flex-col xl:flex-row border p-4 w-11/12 text-black h-auto rounded shadow-lg card ${
+          inView ? "animate__fadeInUp" : ""
+        }`}
       >
         {href && (
           <div className="flex justify-center">
             <img
+              loading="lazy"
               src={href}
               alt="project screenshot"
               className="xl:max-w-[700px]"

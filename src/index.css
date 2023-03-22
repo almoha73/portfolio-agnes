@@ -21,19 +21,24 @@ body{
 	font-family: "Shadows Into Light", cursive;
 }
 
-@keyframes fade-in {
-	from {
+.card {
 	opacity: 0;
-	transform: translateY(50px);
-	}
-	to {
+	transition: opacity 0.5s ease-in-out;
+  }
+  
+  .animate__fadeInUp {
 	opacity: 1;
-	transform: translateY(0);
-	}
-	}
-	
-	.animate-fade-in {
-	animation-name: fade-in;
+	animation-name: fadeInUp;
 	animation-duration: 1s;
-	animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+	from {
+	  transform: translateY(-30px);
 	}
+  
+	to {
+	  transform: translateY(0);
+	}
+  }
+  

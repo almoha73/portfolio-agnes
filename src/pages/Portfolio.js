@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import Navbar from "../components/Navbar";
 import { getScreenshots } from "../utils/fetchScreenshots";
 import Card from "../components/Card";
 import { uuidv4 } from "@firebase/util";
-import  { FaLongArrowAltUp } from "react-icons/fa";
+import { HiChevronDoubleUp } from "react-icons/hi";
+
 
 const Portfolio = () => {
   const [screenshots, setScreenshots] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
-
 
   useEffect(() => {
     const loadData = async () => {
@@ -24,12 +24,12 @@ const Portfolio = () => {
   }, [screenshots.length]);
 
   console.log(screenshots);
-  
+
   const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > 200){
-      setShowScroll(true)
-    } else if (showScroll && window.pageYOffset <= 200){
-      setShowScroll(false)
+    if (!showScroll && window.pageYOffset > 200) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 200) {
+      setShowScroll(false);
     }
   };
 
@@ -39,9 +39,9 @@ const Portfolio = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", checkScrollTop);
-     /**
-   * Remove event listener when component unmounts to prevent memory leaks.
-   */
+    /**
+     * Remove event listener when component unmounts to prevent memory leaks.
+     */
     return () => {
       window.removeEventListener("scroll", checkScrollTop);
     };
@@ -71,19 +71,23 @@ const Portfolio = () => {
         </p>
         <div className=" flex flex-col gap-5 items-center justify-center">
           {screenshots &&
-            screenshots.map((elt) => (
-              <Card
-                href={elt.screenshots.href}
-                npm={elt.screenshots.npm}
-                text={elt.screenshots.text}
-                code={elt.screenshots.code}
-                page={elt.screenshots.page}
-                name={elt.screenshots.name}
-                key={uuidv4()}
-              />
-            ))}
+            screenshots.map((elt) => {
+              
+              return (
+                <Card
+                  href={elt.screenshots.href}
+                  npm={elt.screenshots.npm}
+                  text={elt.screenshots.text}
+                  code={elt.screenshots.code}
+                  page={elt.screenshots.page}
+                  name={elt.screenshots.name}
+                  key={uuidv4()}
+                   {...elt}
+                />
+              );
+            })}
         </div>
-		<div
+        <div
           className="scrollTop"
           onClick={scrollTop}
           style={{
@@ -94,7 +98,10 @@ const Portfolio = () => {
             zIndex: "999",
           }}
         >
-          <FaLongArrowAltUp className="text-secondary h-8 cursor-pointer" />
+          <div className="w-8">
+          <HiChevronDoubleUp className="text-secondary cursor-pointer"  size={30}  />
+          </div>
+          
         </div>
       </main>
     </div>
