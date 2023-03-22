@@ -1,6 +1,20 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 
+
+/**
+ * Composant Card.
+ * Affiche une carte contenant les informations d'un projet.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string} props.href - Lien vers le screenshot du projet.
+ * @param {string} props.text - Texte de présentation du projet.
+ * @param {string} props.page - Lien vers la page du projet.
+ * @param {string} props.code - Lien vers le code source du projet.
+ * @param {string} props.name - Nom du projet.
+ * @param {string} props.npm - Lien vers le package npm du projet.
+ * @returns {JSX.Element} Élément JSX représentant le composant Card.
+ */
+
 const Card = ({ href, text, page, code, name, npm }) => {
   const { ref, inView } = useInView({
     rootMargin: "0px 0px -100px 0px",

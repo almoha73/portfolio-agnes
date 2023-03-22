@@ -1,21 +1,32 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { getScreenshots } from "../utils/fetchScreenshots";
 import Card from "../components/Card";
 import { uuidv4 } from "@firebase/util";
 import { HiChevronDoubleUp } from "react-icons/hi";
 
-
+/**
+ * Composant Portfolio.
+ * Affiche les screenshots de projets et permet de retourner en haut de la page en cours de scroll grâce à une flêche de retour.
+ * @returns {JSX.Element} Élément JSX représentant le composant Portfolio.
+ */
 const Portfolio = () => {
-  const [screenshots, setScreenshots] = useState([]);
-  const [showScroll, setShowScroll] = useState(false);
+  const [screenshots, setScreenshots] = useState([]); // État représentant les screenshots à afficher
+  const [showScroll, setShowScroll] = useState(false); // État représentant l'affichage du bouton "retour en haut"
 
   useEffect(() => {
+    /**
+     * Charge les données des screenshots et les trie.
+     * @async
+     */
     const loadData = async () => {
+      // récupère les données des screenshots
       const array = [];
       const d = await getScreenshots();
-      await d.forEach((query) =>
-        array.push({ key: query.id, screenshots: query.data() })
+      await d.forEach(
+        (
+          query //parcourt les données des screenshots récupérées et stocke chaque élément dans un tableau array sous forme d'objet contenant une clé key et les données screenshots associées
+        ) => array.push({ key: query.id, screenshots: query.data() })
       );
       array.sort((a, b) => a.screenshots.order - b.screenshots.order);
       setScreenshots(array);
@@ -25,6 +36,9 @@ const Portfolio = () => {
 
   console.log(screenshots);
 
+  /**
+   * Vérifie la position de la page et met à jour l'état showScroll en conséquence.
+   */
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 200) {
       setShowScroll(true);
@@ -33,6 +47,9 @@ const Portfolio = () => {
     }
   };
 
+  /**
+   * Fait défiler la page jusqu'en haut avec un effet de transition.
+   */
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -40,7 +57,7 @@ const Portfolio = () => {
   useEffect(() => {
     window.addEventListener("scroll", checkScrollTop);
     /**
-     * Remove event listener when component unmounts to prevent memory leaks.
+     * Supprime l'événement de l'objet window lors du démontage du composant pour éviter les fuites de mémoire.
      */
     return () => {
       window.removeEventListener("scroll", checkScrollTop);
@@ -72,7 +89,17 @@ const Portfolio = () => {
         <div className=" flex flex-col gap-5 items-center justify-center">
           {screenshots &&
             screenshots.map((elt) => {
-              
+              /**
+               * Affiche le composant Card pour chaque screenshot.
+               * @param {Object} elt - L'élément à afficher. --> Card
+               *  @param {string} elt.href - Lien vers le projet.
+               * @param {string} elt.npm - Lien vers le package npm.
+               * @param {string} elt.text - Texte de présentation du projet.
+               * @param {string} elt.code - Lien vers le code source du projet.
+               * @param {string} elt.page - Lien vers la page du projet.
+               * @param {string} elt.name - Nom du projet.
+               * @returns {JSX.Element} Élément JSX représentant le composant Card.
+               */
               return (
                 <Card
                   href={elt.screenshots.href}
@@ -82,7 +109,7 @@ const Portfolio = () => {
                   page={elt.screenshots.page}
                   name={elt.screenshots.name}
                   key={uuidv4()}
-                   {...elt}
+                  {...elt}
                 />
               );
             })}
@@ -99,9 +126,11 @@ const Portfolio = () => {
           }}
         >
           <div className="w-8">
-          <HiChevronDoubleUp className="text-secondary cursor-pointer"  size={30}  />
+            <HiChevronDoubleUp
+              className="text-secondary cursor-pointer"
+              size={30}
+            />
           </div>
-          
         </div>
       </main>
     </div>
