@@ -73,7 +73,7 @@ const Home = () => {
               </p>
             </div>
             <a
-              href="https://firebasestorage.googleapis.com/v0/b/portfolio-e5e20.appspot.com/o/CV%2FCV_contrat-pro.pdf?alt=media&token=b1e4d21d-e692-4fcb-8ade-28d4b984d716"
+              href="https://bit.ly/3ZPJYe5"
               className="cvbutton my-8 block lg:text-2xl bg-secondary hover:bg-blue-500 text-white font-bold py-2 px-4 rounded"
             >
               Téléchargez le CV
