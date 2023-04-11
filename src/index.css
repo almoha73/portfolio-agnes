@@ -21,6 +21,11 @@ body{
 	font-family: "Shadows Into Light", cursive;
 }
 
+.text-container {
+	max-width: 100%;
+	min-width: 250px; /* Ajustez cette valeur en fonction de vos besoins */
+  }
+
 .card {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
