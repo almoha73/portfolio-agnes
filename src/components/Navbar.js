@@ -4,6 +4,15 @@ import CloseIcon from "../assets/xmark-solid.svg";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
+const navigation = [
+  { name: "Accueil", href: "/", key: uuidv4() },
+  { name: "Profil", href: "/profil", key: uuidv4() },
+  { name: "CV", href: "/curiculum-vitae", key: uuidv4() },
+  { name: "Portfolio", href: "/portfolio", key: uuidv4() },
+  { name: "Contact", href: "/contact", key: uuidv4() },
+];
+
+
 export default function Navbar() {
   const [isSideMenuOpen, setisSideMenuOpen] = useState(false);
 
@@ -11,13 +20,7 @@ export default function Navbar() {
     isSideMenuOpen ? setisSideMenuOpen(false) : setisSideMenuOpen(true);
   };
 
-  const navigation = [
-    { name: "Accueil", href: "/", key: uuidv4() },
-    { name: "Profil", href: "/profil", key: uuidv4() },
-    { name: "CV", href: "/curiculum-vitae", key: uuidv4() },
-    { name: "Portfolio", href: "/portfolio", key: uuidv4() },
-    { name: "Contact", href: "/contact", key: uuidv4() },
-  ];
+ 
 
   return (
     <header className="w-11/12 mx-auto">
@@ -62,23 +65,24 @@ export default function Navbar() {
 
 function SideMenu() {
   return (
-    <div className="z-10 fixed h-56 w-1/2 flex justify-center items-center text-neutral-700 sm:w-1/4 lg:hidden bg-neutral-100 top-28">
-      <ul className="menu-list flex flex-col text-base font-bold">
-        <li className="menu-list-item py-2  hover:text-blue-500 		">
-          <a href="/">Accueil</a>
-        </li>
-        <li className="menu-list-item  py-2  hover:text-blue-500 	">
-          <a href="/profil">Profil</a>
-        </li>
-        <li className="menu-list-item  py-2  hover:text-blue-500 	">
-          <a href="/curiculum-vitae">CV</a>
-        </li>
-        <li className="menu-list-item  py-2  hover:text-blue-500 	">
-          <a href="/portfolio">PortFolio</a>
-        </li>
-        <li className="menu-list-item  py-2  hover:text-blue-500 	">
-          <a href="/contact">Contact</a>
-        </li>
+    <div className="z-10 fixed h-56 w-1/2 flex justify-center items-center text-neutral-100 sm:w-1/4 lg:hidden bg-secondary top-28 shadow-md rounded-lg">
+      <ul className="menu-list flex flex-col text-base">
+      {navigation.map((item) => (
+            <li className="menu-list-item py-2  hover:text-blue-500 ">
+              <NavLink
+                to={item.href}
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-active underline hover:decoration-4 decoration-[#F7F7F9]"
+                    : "menu-list-item "
+                }
+                end
+              >
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
+        
       </ul>
     </div>
   );

@@ -40,11 +40,11 @@ const Card = ({ href, text, page, code, name, npm }) => {
         )}
 
         <div className="py-2  xl:px-6">
-          <p className="text-xl text-justify">{text}</p>
+          <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">{text}</p>
           <br />
           {href ? (
-            <p className="text-xl">
-              Lien github pages:
+            <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">
+              Lien github pages ou vercel:
               <a
                 href={page}
                 className="text-blue-500 hover:text-[#802836]"
@@ -56,7 +56,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
               </a>
             </p>
           ) : (
-            <p className="text-xl">
+            <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">
               Lien du package sur npm:
               <a
                 href={npm}
@@ -70,7 +70,7 @@ const Card = ({ href, text, page, code, name, npm }) => {
             </p>
           )}
 
-          <p className="text-xl">
+          <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">
             Lien vers le code sur github:{" "}
             <a
               href={code}

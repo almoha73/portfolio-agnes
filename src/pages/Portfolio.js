@@ -67,7 +67,7 @@ const Portfolio = () => {
   return (
     <div className=" flex flex-col items-center w-full h-auto bg-[#F1EBED]  ">
       <Navbar />
-      <main className="w-full h-auto mt-16 sm:mt-24 mb-16 text-black">
+      <main className="w-full h-auto mt-8 sm:mt-24 mb-16 text-black">
         <p className="w-11/12 mx-auto mb-4">
           Lien du code sur github de ce portfolio:{" "}
           <a
