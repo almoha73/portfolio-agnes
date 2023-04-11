@@ -65,7 +65,7 @@ const Profil = () => {
 				<TbBrandNextjs className="md:w-20 md:h-20 fill-transparent" />
 				<SiTypescript className="md:w-20 md:h-20 fill-blue-500" />
               </div>
-              <p className="text md:w-4/5 md:text-xl mt-5 text-justify">
+              <p className="text md:w-4/5 md:text-xl mt-5  text-justify break-all	">
                 Diplomée du parcours de 14 mois de chez OpenClassrooms, je suis
                 spécialisée dans le Frontend avec le framework <span className="font-bold">React</span>.
                 <br />
