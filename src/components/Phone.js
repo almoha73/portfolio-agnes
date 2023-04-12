@@ -118,7 +118,7 @@ const dateFr = new Date().toLocaleDateString("fr-FR", {
   return (
     <div
       ref={phoneRef}
-      className=" min-w-[300px] h-[500px] border border-slate-800  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]"
+      className=" min-w-[300px] h-[500px] border-4 border-slate-800  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]"
     >
       <div className="w-full h-8 bg-black rounded-t-xl border-black border-4">
         <div className="flex w-10/12 justify-between items-center m-auto text-white">
