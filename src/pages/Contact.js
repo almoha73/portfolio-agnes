@@ -6,6 +6,7 @@ import Modal from "../components/Modal";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { useForm } from "react-hook-form";
+import Footer from "../components/Footer";
 
 export default function Contact() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -343,6 +344,7 @@ export default function Contact() {
 
 					{/* Contact grid */}
 				</main>
+				<Footer />
 			</div>
 		</>
 	);

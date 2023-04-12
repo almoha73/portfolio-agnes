@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { getScreenshots } from "../utils/fetchScreenshots";
 import Card from "../components/Card";
 import { uuidv4 } from "@firebase/util";
@@ -67,7 +68,7 @@ const Portfolio = () => {
   return (
     <div className=" flex flex-col items-center w-full h-auto bg-[#F1EBED]  ">
       <Navbar />
-      <main className="w-full h-auto mt-8 sm:mt-24 mb-16 text-black">
+      <main className="w-full h-auto mt-8 sm:mt-24 mb-16 text-black flex-1">
         <p className="w-11/12 mx-auto mb-4">
           Lien du code sur github de ce portfolio:{" "}
           <a
@@ -133,6 +134,7 @@ const Portfolio = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

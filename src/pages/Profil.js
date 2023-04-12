@@ -11,6 +11,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import Navbar from "../components/Navbar";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
+import Footer from "../components/Footer";
 
 const Profil = () => {
   gsap.registerPlugin(SplitText);
@@ -39,7 +40,7 @@ const Profil = () => {
     <>
       <div className=" flex flex-col items-center w-full h-auto sm:h-screen">
         <Navbar />
-        <main className="mt-14 w-full h-2/12 flex justify-center rounded-lg mb-32">
+        <main className="mt-14 w-full h-2/12 flex justify-center flex-1 rounded-lg mb-32">
           <div className="box flex justify-evenly items-center lg:flex-row  flex-col-reverse sm-w-9/12 w-10/12 bg-neutral-100 rounded-lg p-3 sm:p-5">
             <div className="w-full sm:w-9/12 sm:gap-10 flex sm:flex-col flex-col justify-center items-center">
               <div className="mt-5 md:w-4/5 flex gap-2 justify-between">
@@ -61,20 +62,20 @@ const Profil = () => {
                 >
                   Diplomée du parcours de 14 mois de chez OpenClassrooms, je
                   suis spécialisée dans le Frontend avec le framework{" "}
-                  <span className="font-bold">React</span>.
+                  <strong>React</strong>.
                   <br />
                   <br /> Pour ce qui est du style, je code beaucoup en{" "}
-                  <span className="font-bold">Sass</span> , mais aussi en{" "}
-                  <span className="font-bold">Tailwind</span> et{" "}
-                  <span className="font-bold">Bootstrap</span> que j'ai appris
+                  <strong >Sass</strong> , mais aussi en{" "}
+                  <strong >Tailwind</strong> et{" "}
+                  <strong>Bootstrap</strong> que j'ai appris
                   en plus de ma formation, Tailwind étant mon préféré des
                   frameworks css que j'utilise.
                   <br />
                   <br />
                   Vous trouverez dans mon portfolio mes projets personnels,
                   suivis de mes projets de formation. Actuellement, je
-                  m'approprie <span className="font-bold">NextJS </span>
-                  et <span className="font-bold">Typescript</span> pour
+                  m'approprie <strong>NextJS </strong>
+                  et <strong>Typescript</strong> pour
                   continuer à évoluer avec React avec un site de mémo relié à
                   une base de données où je peux joindre des fichiers (photos,
                   pdf, ...).
@@ -85,9 +86,9 @@ const Profil = () => {
                   Styled-components, utiliser des librairies (Recharts, antd,
                   react-hook-form, gsap ...), créer un npm et l'héberger
                   (modale). Mais j'ai aussi appris à utiliser{" "}
-                  <span className="font-bold">Figma</span> pour créer des
+                  <strong>Figma</strong> pour créer des
                   maquettes et j'ai été initiée aux méthodes agiles (
-                  <span className="font-bold">SCRUM</span>).
+                  <strong>SCRUM</strong>).
                   <br />
                   De moi-même, j'ai appris Tailwind, l'utilisation de firebase
                   pour plusieurs projets.
@@ -102,6 +103,7 @@ const Profil = () => {
             />
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );

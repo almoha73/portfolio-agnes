@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Curiculum = () => {
 	return (
-		<div className=" flex flex-col items-start w-full h-auto h-screen">
+		<div className=" flex flex-col items-start w-full  min-h-screen">
 			<Navbar />
-			<div className="flex flex-col  xl:p-24 items-center justify-center w-full  xl:w-2/3 h-screen gap-8 text-[#802836]">
+			<div className="flex flex-col xl:p-24 items-center justify-center w-full  xl:w-2/3 flex-1 gap-8 text-[#802836]">
 				<a
 					href="https://bit.ly/3ZPJYe5"
 					className="text-4xl   hover:text-white hover:bg-[#802836] border shadow-lg px-4 py-2 rounded-lg"
@@ -23,6 +24,7 @@ const Curiculum = () => {
 					Lettre de recommandation
 				</a>
 			</div>
+			<Footer />
 		</div>
 	);
 };

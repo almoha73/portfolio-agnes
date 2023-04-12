@@ -2,12 +2,13 @@ import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Spinner from "./components/spinner/Spinner";
 
+
 const Home = lazy(() => import("./pages/Home"));
 const Profil = lazy(() => import("./pages/Profil"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Curiculum = lazy(() => import("./pages/Curiculum"));
 const Contact = lazy(() => import("./pages/Contact"));
-
+const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/profil" element={<Profil />}></Route>
           <Route path="/curiculum-vitae" element={<Curiculum />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/MentionsLegales" element={<MentionsLegales/>}></Route>
         </Routes>
       </Suspense>
     </div>
