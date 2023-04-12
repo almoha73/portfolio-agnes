@@ -26,7 +26,7 @@ export default function Contact() {
 	return (
 		<>
 			{isOpen && <Modal />}
-			<div className=" flex flex-col items-center w-full h-auto w-full xl:min-h-[1024px] lg:min-h-[768px]">
+			<div className=" flex flex-col items-center w-full h-auto  xl:min-h-[1024px] lg:min-h-[768px]">
 				<Navbar />
 
 				<main className="overflow-hidden">
@@ -218,7 +218,7 @@ export default function Contact() {
 									>
 										<div>
 											<label
-												htmlFor="first-name"
+												htmlFor="firstname"
 												className="block text-sm font-medium"
 											>
 												Prénom
@@ -235,7 +235,7 @@ export default function Contact() {
 										</div>
 										<div>
 											<label
-												htmlFor="last-name"
+												htmlFor="lastname"
 												className="block text-sm font-medium"
 											>
 												Nom
