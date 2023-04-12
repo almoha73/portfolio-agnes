@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 const Phone = () => {
+  const [city, setCity] = useState("");
   const [temperature, setTemperature] = useState(null);
   const [description, setDescription] = useState(null);
   const [icon, setIcon] = useState(null);
@@ -24,26 +25,37 @@ const Phone = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-// Récupération de l'heure actuelle
+  // Récupération de l'heure actuelle
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
+  const formattedTime = `${hours} : ${minutes} : ${seconds}`;
 
-const hours = time.getHours();
-const minutes = time.getMinutes();
-const seconds = time.getSeconds();
-const formattedTime = `${hours} : ${minutes} : ${seconds}`;
+  // Récupération de la date actuelle et conversion en français
+  const dateFr = new Date().toLocaleDateString("fr-FR", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
 
-// Récupération de la date actuelle et conversion en français
-const dateFr = new Date().toLocaleDateString("fr-FR", {
-  weekday: "long",
-  day: "numeric",
-  month: "long",
-});
+  // Stockage de la ville dans une variable
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { latitude, longitude } = position.coords;
+        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+        const data = await response.json();
+        setCity(data.address.city || data.address.town);
+      });
+    } else {
+      console.log("La géolocalisation n'est pas prise en charge par votre navigateur.");
+    }
+  }, []);
 
-
-
-  const city = "Bordeaux";
+  // Récupération des données météo
   useEffect(() => {
     const apiKey = "1e13ef02fc68057b2d90d17a5fbe1a22";
-   
+
     const country = "FR";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`;
 
@@ -57,7 +69,10 @@ const dateFr = new Date().toLocaleDateString("fr-FR", {
       .catch((error) => console.error(error));
   }, []);
 
+
+  //animation des icones du téléphone au chargement de la page
   const phoneRef = useRef(null);
+
   const moveElt = () => {
     gsap.fromTo(
       [".box1", ".box2"],
@@ -87,10 +102,12 @@ const dateFr = new Date().toLocaleDateString("fr-FR", {
       }
     );
   };
+
   useEffect(() => {
     moveElt();
   }, []);
 
+  // animation du téléphone au chargement de la page
   useEffect(() => {
     const phone = phoneRef.current;
     const tl = gsap.timeline();
@@ -112,8 +129,6 @@ const dateFr = new Date().toLocaleDateString("fr-FR", {
       }
     );
   }, []);
-
-  
 
   return (
     <div
