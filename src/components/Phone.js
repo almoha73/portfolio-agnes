@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FaBatteryHalf,
   FaGoogle,
@@ -6,12 +6,32 @@ import {
   FaSquare,
   FaYinYang,
   FaSun,
+  FaCloudSun,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
-
 const Phone = () => {
+  const [temperature, setTemperature] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [icon, setIcon] = useState(null);
+
+  useEffect(() => {
+    const apiKey = "1e13ef02fc68057b2d90d17a5fbe1a22";
+    const city = "Bordeaux";
+    const country = "FR";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`;
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        setTemperature(data.main.temp.toFixed(1));
+        setDescription(data.weather[0].description);
+        setIcon(data.weather[0].icon);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   const phoneRef = useRef(null);
   const moveElt = () => {
     gsap.fromTo(
@@ -49,7 +69,7 @@ const Phone = () => {
   useEffect(() => {
     const phone = phoneRef.current;
     const tl = gsap.timeline();
-    
+
     tl.fromTo(
       phone,
       {
@@ -66,13 +86,32 @@ const Phone = () => {
         repeat: 9,
       }
     );
-    
   }, []);
+
+  // Récupération de l'heure actuelle
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const time = `${hours} : ${minutes}`;
+
+  // Récupération de la date actuelle et conversion en français
+  const dateFr = new Date().toLocaleDateString("fr-FR", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
+
   return (
-    <div ref={phoneRef} className=" min-w-[300px] h-[500px] border border-slate-800 border-[10px]  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]">
+    <div
+      ref={phoneRef}
+      className=" min-w-[300px] h-[500px] border border-slate-800  rounded-3xl shadow-xl flex flex-col bg-[#E6D7DA] lg:scale-[1] xl:scale-[1.3]"
+    >
       <div className="w-full h-8 bg-black rounded-t-xl border-black border-4">
         <div className="flex w-10/12 justify-between items-center m-auto text-white">
-          <span>11:11</span>
+          {/** récupération et affichage de l'heure actuelle*/}
+
+          <span className="text-sm">{time}</span>
+
           <span className="w-2 h-2 rounded full bg-neutral-500"></span>
           <span>
             <FaBatteryHalf className=" text-2xl" />
@@ -89,12 +128,14 @@ const Phone = () => {
           </div>
         </div>
         <h1 className="mt-4 text-base text-black flex w-full justify-evenly items-center">
-          {" "}
-          mercredi 8 fevr{" "}
-          <span>
-            <FaSun className="text-yellow-600 text-2xl" />
-          </span>{" "}
-          15°C
+          <span>{dateFr}</span>
+          {icon && (
+            <img
+              src={`https://openweathermap.org/img/wn/${icon}.png`}
+              alt={description}
+            />
+          )}
+          <span>{temperature}°C</span>
         </h1>
         <div className="w-10/12 mx-auto mt-8 grid grid-rows-2 grid-flow-col gap-4 justify-items-center">
           <div className="">

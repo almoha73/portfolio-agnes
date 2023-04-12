@@ -74,6 +74,8 @@ const Portfolio = () => {
           <a
             href="https://github.com/almoha73/portfolio-agnes"
             className="text-xl text-blue-500"
+            target="_blank"
+            rel="noreferrer"
           >
             Cliquez ici
           </a>
@@ -83,6 +85,8 @@ const Portfolio = () => {
           <a
             href="https://github.com/almoha73"
             className="text-xl text-blue-500"
+            target="_blank"
+            rel="noreferrer"
           >
             Cliquez ici
           </a>
