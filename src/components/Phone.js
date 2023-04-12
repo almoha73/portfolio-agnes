@@ -28,8 +28,20 @@ const Phone = () => {
   // Récupération de l'heure actuelle
   const hours = time.getHours();
   const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
-  const formattedTime = `${hours} : ${minutes} : ${seconds}`;
+  let seconds = time.getSeconds();
+
+ // Formatage des secondes pour que l'affichage soit toujours de 2 chiffres
+const s = String(seconds).padStart(2, "0");
+
+// Formatage des minutes pour que l'affichage soit toujours de 2 chiffres
+const m = String(minutes).padStart(2, "0");
+
+// Formatage de l'heure pour que l'affichage soit toujours de 2 chiffres
+const h = String(hours).padStart(2, "0");
+
+
+  // Formatage de l'heure
+  const formattedTime = `${h} : ${m} : ${s}`;
 
   // Récupération de la date actuelle et conversion en français
   const dateFr = new Date().toLocaleDateString("fr-FR", {
