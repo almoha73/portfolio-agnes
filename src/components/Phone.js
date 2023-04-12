@@ -13,6 +13,33 @@ const Phone = () => {
   const [temperature, setTemperature] = useState(null);
   const [description, setDescription] = useState(null);
   const [icon, setIcon] = useState(null);
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    // Nettoyage de l'intervalle lorsque le composant est démonté
+    return () => clearInterval(intervalId);
+  }, []);
+
+// Récupération de l'heure actuelle
+
+const hours = time.getHours();
+const minutes = time.getMinutes();
+const seconds = time.getSeconds();
+const formattedTime = `${hours} : ${minutes} : ${seconds}`;
+
+// Récupération de la date actuelle et conversion en français
+const dateFr = new Date().toLocaleDateString("fr-FR", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+});
+
+
+
   const city = "Bordeaux";
   useEffect(() => {
     const apiKey = "1e13ef02fc68057b2d90d17a5fbe1a22";
@@ -86,18 +113,7 @@ const Phone = () => {
     );
   }, []);
 
-  // Récupération de l'heure actuelle
-  const date = new Date();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const time = `${hours} : ${minutes}`;
-
-  // Récupération de la date actuelle et conversion en français
-  const dateFr = new Date().toLocaleDateString("fr-FR", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  });
+  
 
   return (
     <div
@@ -108,7 +124,7 @@ const Phone = () => {
         <div className="flex w-10/12 justify-between items-center m-auto text-white">
           {/** récupération et affichage de l'heure actuelle*/}
 
-          <span className="text-sm">{time}</span>
+          <span className="text-sm">{formattedTime}</span>
 
           <span className="w-2 h-2 rounded full bg-neutral-500"></span>
           <span>
