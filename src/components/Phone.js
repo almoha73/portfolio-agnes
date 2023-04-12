@@ -5,8 +5,6 @@ import {
   FaPlay,
   FaSquare,
   FaYinYang,
-  FaSun,
-  FaCloudSun,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
