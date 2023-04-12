@@ -15,10 +15,10 @@ const Phone = () => {
   const [temperature, setTemperature] = useState(null);
   const [description, setDescription] = useState(null);
   const [icon, setIcon] = useState(null);
-
+  const city = "Bordeaux";
   useEffect(() => {
     const apiKey = "1e13ef02fc68057b2d90d17a5fbe1a22";
-    const city = "Bordeaux";
+   
     const country = "FR";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`;
 
@@ -127,7 +127,8 @@ const Phone = () => {
             <span className="text-white">Agnès</span>
           </div>
         </div>
-        <h1 className="mt-4 text-base text-black flex w-full justify-evenly items-center">
+        <p className="mt-4 text-center">{city}</p>
+        <h1 className=" text-base text-black flex w-full justify-evenly items-center">
           <span>{dateFr}</span>
           {icon && (
             <img
