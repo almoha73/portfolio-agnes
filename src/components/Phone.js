@@ -30,15 +30,14 @@ const Phone = () => {
   const minutes = time.getMinutes();
   let seconds = time.getSeconds();
 
- // Formatage des secondes pour que l'affichage soit toujours de 2 chiffres
-const s = String(seconds).padStart(2, "0");
+  // Formatage des secondes pour que l'affichage soit toujours de 2 chiffres
+  const s = String(seconds).padStart(2, "0");
 
-// Formatage des minutes pour que l'affichage soit toujours de 2 chiffres
-const m = String(minutes).padStart(2, "0");
+  // Formatage des minutes pour que l'affichage soit toujours de 2 chiffres
+  const m = String(minutes).padStart(2, "0");
 
-// Formatage de l'heure pour que l'affichage soit toujours de 2 chiffres
-const h = String(hours).padStart(2, "0");
-
+  // Formatage de l'heure pour que l'affichage soit toujours de 2 chiffres
+  const h = String(hours).padStart(2, "0");
 
   // Formatage de l'heure
   const formattedTime = `${h} : ${m} : ${s}`;
@@ -55,19 +54,22 @@ const h = String(hours).padStart(2, "0");
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
-        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+        );
         const data = await response.json();
         setCity(data.address.city || data.address.town);
       });
     } else {
-      console.log("La géolocalisation n'est pas prise en charge par votre navigateur.");
+      console.log(
+        "La géolocalisation n'est pas prise en charge par votre navigateur."
+      );
     }
   }, []);
 
   // Récupération des données météo
   useEffect(() => {
     const apiKey = "1e13ef02fc68057b2d90d17a5fbe1a22";
-
     const country = "FR";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`;
 
@@ -80,7 +82,6 @@ const h = String(hours).padStart(2, "0");
       })
       .catch((error) => console.error(error));
   }, []);
-
 
   //animation des icones du téléphone au chargement de la page
   const phoneRef = useRef(null);
@@ -119,7 +120,7 @@ const h = String(hours).padStart(2, "0");
     moveElt();
   }, []);
 
-  // animation du téléphone au chargement de la page
+  // animation de vibration du téléphone au chargement de la page
   useEffect(() => {
     const phone = phoneRef.current;
     const tl = gsap.timeline();

@@ -29,7 +29,7 @@ export default function Contact() {
 			<div className=" flex flex-col items-center w-full h-auto  xl:min-h-[1024px] lg:min-h-[768px]">
 				<Navbar />
 
-				<main className="overflow-hidden">
+				<main className="overflow-hidden flex-1">
 					{/* Header */}
 
 					{/* Contact section */}
