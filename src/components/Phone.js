@@ -81,7 +81,7 @@ const Phone = () => {
         setIcon(data.weather[0].icon);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [city]);
 
   //animation des icones du téléphone au chargement de la page
   const phoneRef = useRef(null);
