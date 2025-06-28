@@ -1,7 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 
-
 /**
  * Composant Card.
  * Affiche une carte contenant les informations d'un projet.
@@ -17,74 +16,64 @@ import { useInView } from "react-intersection-observer";
 
 const Card = ({ href, text, page, code, name, npm }) => {
   const { ref, inView } = useInView({
-    rootMargin: "0px 0px -100px 0px",
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.1, // Trigger when 10% of the element is in view
   });
 
   return (
-    <>
-      <div
-        ref={ref}
-        className={`flex flex-col xl:flex-row border p-4 w-11/12 text-black h-auto rounded shadow-lg card ${
-          inView ? "animate__fadeInUp" : ""
-        }`}
-      >
-        {href && (
-          <div className="flex justify-center">
-            <img
-              loading="lazy"
-              src={href}
-              alt="project screenshot"
-              className="xl:max-w-[700px]"
-            />
-          </div>
-        )}
+    <div
+      ref={ref}
+      className={`bg-palette-5 rounded-lg shadow-lg overflow-hidden transform transition-all duration-500 ${inView ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+    >
+      {href && (
+        <div className="w-full h-48 overflow-hidden">
+          <img
+            loading="lazy"
+            src={href}
+            alt="project screenshot"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
 
-        <div className="py-2  xl:px-6">
-          <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">{text}</p>
-          <br />
-          {href ? (
-            <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">
-              Lien github pages ou vercel:
-              <a
-                href={page}
-                className="text-blue-500 hover:text-[#802836]"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {" "}
-                {name}
-              </a>
-            </p>
-          ) : (
-            <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">
-              Lien du package sur npm:
-              <a
-                href={npm}
-                className="text-blue-500 hover:text-[#802836]"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {" "}
-                {name}
-              </a>
-            </p>
-          )}
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-palette-1 mb-2">{name}</h3>
+        <p className="text-palette-1 text-base mb-4">{text}</p>
 
-          <p className="text-base text-justify hyphens-auto tracking-normal md:tracking-normal">
-            Lien vers le code sur github:{" "}
+        <div className="flex flex-col space-y-2">
+          {page && (
             <a
-              href={code}
-              className="text-blue-500 hover:text-[#802836]"
+              href={page}
+              className="text-palette-2 hover:text-palette-3 font-medium"
               target="_blank"
               rel="noreferrer"
             >
-              {" "}
-              Code {name}
+              Voir le projet
             </a>
-          </p>
+          )}
+          {npm && (
+            <a
+              href={npm}
+              className="text-palette-2 hover:text-palette-3 font-medium"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Voir le package npm
+            </a>
+          )}
+          {code && (
+            <a
+              href={code}
+              className="text-palette-2 hover:text-palette-3 font-medium"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Voir le code source
+            </a>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

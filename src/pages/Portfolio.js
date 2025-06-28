@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { getScreenshots } from "../utils/fetchScreenshots";
 import Card from "../components/Card";
-import { uuidv4 } from "@firebase/util";
 import { HiChevronDoubleUp } from "react-icons/hi";
+import { v4 as uuidv4 } from "uuid"; // Import uuidv4
 
 /**
  * Composant Portfolio.
@@ -33,9 +31,7 @@ const Portfolio = () => {
       setScreenshots(array);
     };
     loadData();
-  }, [screenshots.length]);
-
-  console.log(screenshots);
+  }, []); // Empty dependency array to run only once on mount
 
   /**
    * Vérifie la position de la page et met à jour l'état showScroll en conséquence.
@@ -63,82 +59,55 @@ const Portfolio = () => {
     return () => {
       window.removeEventListener("scroll", checkScrollTop);
     };
-  });
+  }, [showScroll]); // Add showScroll to dependency array
 
   return (
-    <div className=" flex flex-col items-center w-full h-auto bg-[#F1EBED]  ">
-      <Navbar />
-      <main className="w-full h-auto mt-8 sm:mt-24 mb-16 text-black flex-1">
-        <p className="w-11/12 mx-auto mb-4">
-          Lien du code sur github de ce portfolio:{" "}
+    <div className="min-h-screen w-full flex flex-col items-center bg-gray-50">
+      <main className="container mx-auto px-4 py-8 lg:py-16 text-gray-800 flex-1">
+        <p className="w-11/12 mx-auto mb-4 text-lg">
+          Lien du code sur GitHub de ce portfolio:{" "}
           <a
             href="https://github.com/almoha73/portfolio-agnes"
-            className="text-xl text-blue-500"
+            className="text-blue-600 hover:underline font-semibold"
             target="_blank"
             rel="noreferrer"
           >
             Cliquez ici
           </a>
         </p>
-        <p className=" w-11/12 mx-auto mb-4">
-          Lien vers mon github:{" "}
+        <p className="w-11/12 mx-auto mb-8 text-lg">
+          Lien vers mon GitHub:{" "}
           <a
             href="https://github.com/almoha73"
-            className="text-xl text-blue-500"
+            className="text-blue-600 hover:underline font-semibold"
             target="_blank"
             rel="noreferrer"
           >
             Cliquez ici
           </a>
         </p>
-        <div className=" flex flex-col gap-5 items-center justify-center">
-          {screenshots &&
-            screenshots.map((elt) => {
-              /**
-               * Affiche le composant Card pour chaque screenshot.
-               * @param {Object} elt - L'élément à afficher. --> Card
-               *  @param {string} elt.href - Lien vers le projet.
-               * @param {string} elt.npm - Lien vers le package npm.
-               * @param {string} elt.text - Texte de présentation du projet.
-               * @param {string} elt.code - Lien vers le code source du projet.
-               * @param {string} elt.page - Lien vers la page du projet.
-               * @param {string} elt.name - Nom du projet.
-               * @returns {JSX.Element} Élément JSX représentant le composant Card.
-               */
-              return (
-                <Card
-                  href={elt.screenshots.href}
-                  npm={elt.screenshots.npm}
-                  text={elt.screenshots.text}
-                  code={elt.screenshots.code}
-                  page={elt.screenshots.page}
-                  name={elt.screenshots.name}
-                  key={uuidv4()}
-                  {...elt}
-                />
-              );
-            })}
-        </div>
-        <div
-          className="scrollTop"
-          onClick={scrollTop}
-          style={{
-            display: showScroll ? "flex" : "none",
-            position: "fixed",
-            bottom: "20px",
-            right: "20px",
-            zIndex: "999",
-          }}
-        >
-          <div className="w-8">
-            <HiChevronDoubleUp
-              className="text-secondary cursor-pointer"
-              size={30}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {screenshots.map((elt) => (
+            <Card
+              href={elt.screenshots.href}
+              npm={elt.screenshots.npm}
+              text={elt.screenshots.text}
+              code={elt.screenshots.code}
+              page={elt.screenshots.page}
+              name={elt.screenshots.name}
+              key={uuidv4()}
+              {...elt}
             />
-          </div>
+          ))}
         </div>
+        <button
+          className={`fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 ${showScroll ? "opacity-100" : "opacity-0"}`}
+          onClick={scrollTop}
+          style={{ display: showScroll ? "flex" : "none" }} // Keep display none for initial render
+        >
+          <HiChevronDoubleUp size={24} />
+        </button>
       </main>
-      <Footer />
     </div>
   );
 };
