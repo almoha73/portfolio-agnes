@@ -1,19 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
 const axios = require('axios');
 
-dotenv.config({ path: '../.env' });
-
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
-
-app.get('/weather', async (req, res) => {
+module.exports = async (req, res) => {
   const { city } = req.query;
-  const apiKey = process.env.OPENWEATHER_API_KEY;
-  const country = "FR"; // Assuming France for now
+  const apiKey = process.env.OPENWEATHER_API_KEY; // Vercel injecte les variables d'environnement
+  const country = "FR";
 
   if (!city) {
     return res.status(400).json({ error: 'City parameter is required.' });
@@ -23,7 +13,12 @@ app.get('/weather', async (req, res) => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`;
     const response = await axios.get(apiUrl);
     
-    res.json(response.data);
+    // Ajouter les en-têtes CORS pour permettre les requêtes depuis votre frontend
+    res.setHeader('Access-Control-Allow-Origin', '*'); // À ajuster pour la production
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    res.status(200).json(response.data);
   } catch (error) {
     console.error('Error fetching weather data:', error.message);
     if (error.response) {
@@ -32,8 +27,4 @@ app.get('/weather', async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch weather data.' });
     }
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+};

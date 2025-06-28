@@ -41,7 +41,7 @@ const Phone = () => {
 
   useEffect(() => {
     if (city) {
-      fetch(`http://localhost:5000/weather?city=${city}`)
+      fetch(`/api/weather?city=${city}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.main) {
