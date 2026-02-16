@@ -1,19 +1,15 @@
 import React from "react";
-import "./Spinner.css";
-
-
 
 const Spinner = () => {
   return (
-   
-      <div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div className="loader-section section-left"></div>
-        <div className="loader-section section-right"></div>
+    <div className="fixed inset-0 flex items-center justify-center bg-slate-50 z-[100]">
+      <div className="relative w-20 h-20">
+        <div className="absolute w-full h-full border-4 border-slate-100 rounded-full"></div>
+        <div className="absolute w-full h-full border-4 border-primary-600 rounded-full border-t-transparent animate-spin"></div>
       </div>
-   
+    </div>
   );
 };
 
 export default Spinner;
+

@@ -5,16 +5,57 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "palette-1": "#073c92",
-        "palette-2": "#db0ac3",
-        "palette-3": "#f6af3c",
-        "palette-4": "#85f993",
-        "palette-5": "#cee0fd"
+        primary: {
+          50: "#f5f3ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#a78bfa",
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#4c1d95",
+        },
+        secondary: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
+        },
+        accent: "#f43f5e",
+        dark: "#0f172a",
+        surface: "#1e293b",
+        "palette-1": "#4c1d95", // Mapping old to new for compatibility during transition
+        "palette-2": "#8b5cf6",
+        "palette-3": "#0ea5e9",
+        "palette-4": "#10b981",
+        "palette-5": "#f8fafc"
       },
+      fontFamily: {
+        outfit: ["Outfit", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      animation: {
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 3s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        }
+      }
     },
   },
   plugins: [
-    // ...
     require("@tailwindcss/forms"),
   ],
 };
+

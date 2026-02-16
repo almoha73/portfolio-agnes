@@ -16,7 +16,7 @@ function App() {
   const showFooter = location.pathname !== '/';
 
   return (
-    <div className="App bg-palette-5">
+    <div className="App bg-slate-50 min-h-screen">
       <Navbar />
       <Suspense fallback={<Spinner />}>
         <Routes>
@@ -25,11 +25,12 @@ function App() {
           <Route path="/profil" element={<Profil />}></Route>
           <Route path="/curiculum-vitae" element={<Curiculum />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/MentionsLegales" element={<MentionsLegales/>}></Route>
+          <Route path="/MentionsLegales" element={<MentionsLegales />}></Route>
         </Routes>
       </Suspense>
       {showFooter && <Footer />}
     </div>
+
   );
 }
 

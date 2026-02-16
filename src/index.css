@@ -1,48 +1,69 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 
-*,
-::after,
-::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap');
+
+:root {
+  --primary: #8b5cf6;
+  --secondary: #0ea5e9;
+  --accent: #f43f5e;
+  --dark: #0f172a;
 }
-body{
-	
+
+body {
+  @apply font-inter bg-slate-50 text-slate-800 antialiased overflow-x-hidden;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-outfit tracking-tight;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-slate-900/70 backdrop-blur-md border border-slate-700/30;
+}
+
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-primary-900 via-dark to-slate-900;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-primary-400 transition-colors;
+}
+
 #textel1 {
-	font-family: "Shadows Into Light", cursive;
+  font-family: "Shadows Into Light", cursive;
 }
 
-.text-container {
-	max-width: 100%;
-	min-width: 250px; /* Ajustez cette valeur en fonction de vos besoins */
-  }
-
-.card {
-	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
-  }
-  
-  .animate__fadeInUp {
-	opacity: 1;
-	animation-name: fadeInUp;
-	animation-duration: 1s;
-  }
-  
-  @keyframes fadeInUp {
-	from {
-	  transform: translateY(-30px);
-	}
-  
-	to {
-	  transform: translateY(0);
-	}
-  }
-  
