@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getScreenshots } from "../utils/fetchScreenshots";
 import Card from "../components/Card";
 import { HiChevronDoubleUp, HiOutlineExternalLink } from "react-icons/hi";
-import { v4 as uuidv4 } from "uuid";
 
 const Portfolio = () => {
   const [screenshots, setScreenshots] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
-  const [activeFilter, setActiveFilter] = useState("Tous");
 
   useEffect(() => {
     const loadData = async () => {
@@ -20,22 +18,22 @@ const Portfolio = () => {
     loadData();
   }, []);
 
-  const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > 200) {
-      setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= 200) {
-      setShowScroll(false);
-    }
-  };
+  useEffect(() => {
+    const checkScrollTop = () => {
+      if (!showScroll && window.pageYOffset > 200) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 200) {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", checkScrollTop);
+    return () => window.removeEventListener("scroll", checkScrollTop);
+  }, [showScroll]);
 
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", checkScrollTop);
-    return () => window.removeEventListener("scroll", checkScrollTop);
-  }, [showScroll]);
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-slate-50">

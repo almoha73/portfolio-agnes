@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  FaHtml5, FaCss3Alt, FaSass, FaNpm, FaGithub, FaReact, FaBriefcase, FaGraduationCap, FaUser
+  FaSass, FaGithub, FaReact, FaBriefcase, FaGraduationCap, FaUser
 } from "react-icons/fa";
 import {
-  SiJavascript, SiTailwindcss, SiBootstrap, SiTypescript, SiFirebase, SiFigma
+  SiJavascript, SiTailwindcss, SiTypescript, SiFirebase, SiFigma
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 

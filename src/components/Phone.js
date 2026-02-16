@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaSignal, FaWifi, FaBatteryFull } from "react-icons/fa";
+import { FaSignal, FaWifi } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const apps = [
@@ -192,4 +192,3 @@ const Phone = () => {
 };
 
 export default Phone;
-
